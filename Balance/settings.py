@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,11 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     # Personal
     'Apps.Web_Empresa',
-    # Apis
-    'Apps.quickstart'
+
 ]
 
 MIDDLEWARE = [
@@ -53,16 +50,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
 ]
-
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
-}
 
 ROOT_URLCONF = 'Balance.urls'
 
@@ -132,7 +119,8 @@ USE_TZ = True
 
 # Archivos estaticos
 STATIC_ROOT = "static"
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
+
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -148,6 +136,3 @@ MEDIA_URL = '/media/'
 # LOGIN_URL = '/usuarios/ingresar/'
 # LOGIN_REDIRECT_URL = '/usuarios/salir/'
 # LOGOUT_REDIRECT_URL = '/usuarios/ingresar/'
-
-# Activate Django-Heroku.
-django_heroku.settings(locals())
