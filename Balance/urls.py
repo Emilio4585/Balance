@@ -18,13 +18,13 @@ from django.urls import include, path
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
-from Apps.Web_Empresa.views import IndexView
 from . import settings
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView.as_view(), name='Index'),
+    path('blog/', include('Apps.blog.urls'), name='blog_url'),
+    path('pages/', include('Apps.pages.urls'), name='pages_url'),
 
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # add this for media
