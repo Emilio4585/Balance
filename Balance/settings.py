@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Personal
     'Apps.blog',
+    'Apps.posts',
 
 ]
 
@@ -118,8 +119,8 @@ USE_TZ = True
 
 
 # Archivos estaticos
-STATIC_ROOT = "static"
-STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
 
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATICFILES_FINDERS = [

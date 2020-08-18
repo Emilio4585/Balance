@@ -23,8 +23,9 @@ from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include('Apps.blog.urls'), name='blog_url'),
+    path('blogs/', include('Apps.blog.urls'), name='blog_url'),
     path('pages/', include('Apps.pages.urls'), name='pages_url'),
+    path('posts/', include('Apps.posts.urls'), name='posts_url'),
 
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # add this for media

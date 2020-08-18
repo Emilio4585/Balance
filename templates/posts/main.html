@@ -1,0 +1,13 @@
+{% extends 'posts/base.html' %}
+{% block body %}
+    <h1>Message board homepage</h1>
+
+{% for post in posts %}
+    <li>{{ post.text }}</li>
+    {% empty %}
+    <p>No hay Posts</p>
+{% endfor %}
+
+
+{% endblock %}
+
