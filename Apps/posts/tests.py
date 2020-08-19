@@ -25,10 +25,10 @@ class HomePageView(TestCase):
         self.assertEqual(resp.status_code, 200)
 
     def test_view_url_by_name(self):
-        resp = self.client.get(reverse('home'))
+        resp = self.client.get(reverse('home_post'))
         self.assertEqual(resp.status_code, 200)
 
     def test_view_uses_correct_template(self):
-        resp = self.client.get(reverse('home'))
+        resp = self.client.get(reverse('home_post'))
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, 'posts/main.html')
