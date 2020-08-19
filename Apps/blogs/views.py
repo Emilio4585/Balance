@@ -10,7 +10,6 @@ class HomeListView(ListView):
     model = PostBlog
     template_name = 'blog/main.html'
     context_object_name = 'blogs'
-    paginate_by = 2
 
 
 class HomeView(DetailView):
