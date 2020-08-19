@@ -5,8 +5,16 @@
     <title>Title</title>
 </head>
 <body>
+<header>
+    <div class="nav-left">
+        <h1><a href="{% url 'blogs_home' %}">Django blog</a></h1>
+    </div>
+    <div class="nav-right">
+        <a href="{% url 'blog_new' %}">+ New Blog Post</a>
+    </div>
+</header>
 
-{% block body %}
+{% block content %}
 {% endblock %}
 </body>
 </html>

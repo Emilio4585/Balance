@@ -32,11 +32,11 @@ class BlogTest(TestCase):
         response = self.client.get(reverse('home_blogs'))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'body')
-        self.assertTemplateUsed(response, 'blog/main.html')
+        self.assertTemplateUsed(response, 'blog/blog_main.html')
 
     def test_post_detail_view(self):
-        response = self.client.get('/blogs/aut/1')
-        no_response = self.client.get('/post/100000')
+        response = self.client.get('/blogs/author/1')
+        no_response = self.client.get('/post/author/100000')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, 'titulo')
