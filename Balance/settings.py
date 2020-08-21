@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'Apps.posts',
     'Apps.pages',
     'Apps.blogs',
+    'Apps.accounts',
 
 ]
 
@@ -135,6 +136,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Login
-# LOGIN_URL = '/usuarios/ingresar/'
+LOGIN_REDIRECT_URL = '/blogs/'
+LOGOUT_REDIRECT_URL = '/blogs/'
+
+# LOGIN_URL = '/blogs/login/'
 # LOGIN_REDIRECT_URL = '/usuarios/salir/'
-# LOGOUT_REDIRECT_URL = '/usuarios/ingresar/'
